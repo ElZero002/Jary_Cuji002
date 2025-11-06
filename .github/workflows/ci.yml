@@ -3,8 +3,12 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
-  pull_request:
+      - jary
+
+permissions:
+  contents: read
+  packages: write
+
 
 jobs:
   build:
@@ -25,7 +29,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: 🧪 Run tests
-      run: pytest
+      run: PYTHONPATH=. pytest
 
     - name: 🧹 Run lint
       run: flake8 .
@@ -41,4 +45,4 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ghcr.io/${{ github.repository }}:latest
+        tags: ghcr.io/ElZero002/Jary_Cuji002:latest

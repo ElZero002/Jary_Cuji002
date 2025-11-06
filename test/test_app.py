@@ -7,3 +7,4 @@ def test_home_route():
         response = client.get('/')
         assert response.status_code == 200
         assert b"Hola" in response.data  # verifica que devuelva algo de texto
+        
