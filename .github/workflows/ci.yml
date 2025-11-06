@@ -45,4 +45,4 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ghcr.io/ElZero002/jary_cuji002:latest
+        tags: ghcr.io/elzero002/jary_cuji002:latest
